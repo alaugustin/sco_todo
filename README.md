@@ -1,4 +1,4 @@
-# SCO TODO
+# SCO TODO App
 
 ## Requirements
 <ol>
