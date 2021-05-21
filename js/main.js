@@ -1,6 +1,6 @@
 let scoTabs = (cityName) =>  {
-    let i;
-    let x = document.getElementsByClassName("listParent");
+    var i;
+    var x = document.getElementsByClassName("listParent");
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
     }
@@ -54,28 +54,53 @@ let scoFf = {
 
 
     listAll: () => {
-        const listDataAll = JSON.parse(localStorage.getItem("scoTasks"));
-        console.log(listDataAll);
-        console.log("*---*");
+        const listDataActive = JSON.parse(localStorage.getItem("scoTasks")),
+            divShowData = document.querySelector("#all .dataHolder");
+
+        console.log(listDataActive);
+
+        divShowData.innerHTML = JSON.stringify(listDataActive);
 
     },
 
     listActive: () => {
-        const listDataActive = JSON.parse(localStorage.getItem("scoTasks"));
+        const listDataActive = JSON.parse(localStorage.getItem("scoTasks")),
+            divShowData = document.querySelector("#active .dataHolder");
 
-        var listActiveResult = listDataActive.filter(obj => obj.status == "active");
-        console.log(listActiveResult);
+        var listDataActiveResult = listDataActive.filter(obj => obj.status == "active");
 
-        console.log("*---*");
+        console.log(listDataActive);
+        console.log(listDataActiveResult);
+
+        divShowData.innerHTML = JSON.stringify(listDataActiveResult);
+
+
+
+
+
+
+
+
+        // listCompleteResult.forEach(element => {
+            // divShowData.innerHTML = JSON.stringify(element);
+            // divShowData.innerHTML = element.title + ' ' + element.status;
+        // });
+
+        // console.log("*---*");
     },
 
     listComplete: () => {
-        const listDataActive = JSON.parse(localStorage.getItem("scoTasks"));
+        const listDataActive = JSON.parse(localStorage.getItem("scoTasks")),
+            divShowData = document.querySelector("#completed .dataHolder");
 
         var listCompleteResult = listDataActive.filter(obj => obj.status == "completed");
+
+        console.log(listDataActive);
         console.log(listCompleteResult);
 
-        console.log("*---*");
+        divShowData.innerHTML = JSON.stringify(listCompleteResult);
+
+        // console.log("*---*");
     },
 
     inputSave: () => {
@@ -84,7 +109,7 @@ let scoFf = {
         let foo = document.getElementsByTagName("input");
 
 
-        addButton.addEventListener("click", function(){
+        addButton.addEventListener("click", function () {
             console.log(foo);
         });
     },
