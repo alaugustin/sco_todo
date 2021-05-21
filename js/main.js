@@ -29,16 +29,22 @@ let scoFf = {
 
         // CALL DOM INVOKING FUNCTIONS HERE --------------------
         scoFf.footerDate();
+        scoFf.loadInitialData();
         scoFf.inputSave();
         console.log(scoFf.config);
 
+    loadInitialData: () => {
         scoFf.config.scoTasks.push(
-            { "title": "grape", "statue": "pending" },
-            { "title": "apple", "statue": "active" },
-            { "title": "orange", "statue": "completed" },
-            // { "title": context.taskTitle, "statue": context.taskStatus },
+            { "title": "apple", "status": "pending" },
+            { "title": "orange", "status": "completed" },
+            { "title": "nectarine", "status": "active" },
+            { "title": "banana", "status": "active" },
+            { "title": "strawberry", "status": "pending" },
+            { "title": "watermelon", "status": "completed" },
+            // { "title": context.taskTitle, "status": context.taskStatus },
         );
         localStorage.setItem("scoTasks", JSON.stringify(scoFf.config.scoTasks));
+    },
 
 
     },
