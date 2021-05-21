@@ -30,6 +30,10 @@ let scoFf = {
         // CALL DOM INVOKING FUNCTIONS HERE --------------------
         scoFf.footerDate();
         scoFf.loadInitialData();
+
+        scoFf.listAll();
+        scoFf.listActive();
+        scoFf.listComplete();
         scoFf.inputSave();
         console.log(scoFf.config);
 
@@ -47,6 +51,11 @@ let scoFf = {
     },
 
 
+    listAll: () => {
+        const listDataAll = JSON.parse(localStorage.getItem("scoTasks"));
+        console.log(listDataAll);
+        console.log("*---*");
+
     },
 
     footerDate: () => {
@@ -54,6 +63,22 @@ let scoFf = {
         let dateHolder = document.getElementById("dateHolder"),
             d = new Date().getFullYear();
         dateHolder.innerHTML = d;
+    listActive: () => {
+        const listDataActive = JSON.parse(localStorage.getItem("scoTasks"));
+
+        var listActiveResult = listDataActive.filter(obj => obj.status == "active");
+        console.log(listActiveResult);
+
+        console.log("*---*");
+    },
+
+    listComplete: () => {
+        const listDataActive = JSON.parse(localStorage.getItem("scoTasks"));
+
+        var listCompleteResult = listDataActive.filter(obj => obj.status == "completed");
+        console.log(listCompleteResult);
+
+        console.log("*---*");
     },
 
     inputSave: () => {
