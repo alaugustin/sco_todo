@@ -32,7 +32,12 @@ let scoFf = {
         scoFf.inputSave();
         console.log(scoFf.config);
 
-        scoFf.config.scoTasks.push({ "title": context.taskTitle, "statue": context.taskStatus });
+        scoFf.config.scoTasks.push(
+            { "title": "grape", "statue": "pending" },
+            { "title": "apple", "statue": "active" },
+            { "title": "orange", "statue": "completed" },
+            // { "title": context.taskTitle, "statue": context.taskStatus },
+        );
         localStorage.setItem("scoTasks", JSON.stringify(scoFf.config.scoTasks));
 
 
