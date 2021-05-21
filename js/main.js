@@ -1,4 +1,12 @@
 console.log("linked in");
+let scoTabs = (cityName) =>  {
+    let i;
+    let x = document.getElementsByClassName("listParent");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById(cityName).style.display = "block";
+}
         scoFf.footerDate();
         scoFf.inputSave();
     footerDate: () => {
