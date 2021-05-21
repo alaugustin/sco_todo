@@ -28,14 +28,16 @@ let scoFf = {
         };
 
         // CALL DOM INVOKING FUNCTIONS HERE --------------------
-        scoFf.footerDate();
         scoFf.loadInitialData();
 
         scoFf.listAll();
         scoFf.listActive();
         scoFf.listComplete();
+
         scoFf.inputSave();
+        scoFf.footerDate();
         console.log(scoFf.config);
+    },
 
     loadInitialData: () => {
         scoFf.config.scoTasks.push(
@@ -58,11 +60,6 @@ let scoFf = {
 
     },
 
-    footerDate: () => {
-        // console.log("wired in");
-        let dateHolder = document.getElementById("dateHolder"),
-            d = new Date().getFullYear();
-        dateHolder.innerHTML = d;
     listActive: () => {
         const listDataActive = JSON.parse(localStorage.getItem("scoTasks"));
 
@@ -90,7 +87,13 @@ let scoFf = {
         addButton.addEventListener("click", function(){
             console.log(foo);
         });
-    }
+    },
+
+    footerDate: () => {
+        let dateHolder = document.getElementById("dateHolder"),
+            d = new Date().getFullYear();
+        dateHolder.innerHTML = d;
+    },
 
 };
 
