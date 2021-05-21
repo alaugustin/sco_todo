@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCO TODO</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>My Task List</h1>
+    </header>
+    <hr>
+    <!--  -->
+
+    <main>
+        <input type="text" id="inputNote" placeholder="Note...">
+        <input type="text" id="inputStatus" placeholder="Status...">
+        <span id="mainButton" class="addBtn">Add</span>
+        <!--  -->
+        <div class="w3-bar w3-black">
+            <button onclick="scoTabs('all')">All</button>
+            <button onclick="scoTabs('active')">Active</button>
+            <button onclick="scoTabs('completed')">Completed</button>
+        </div>
+        <hr>
+        <div id="all" class="listParent">
+            <h2>All</h2>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>grape</td>
+                    <td>pending</td>
+                </tr>
+                <tr>
+                    <td>Apple</td>
+                    <td>active</td>
+                </tr>
+                <tr>
+                    <td>Orange</td>
+                    <td>completed</td>
+                </tr>
+            </table>
+        </div>
+        <div id="active" class="listParent" style="display:none">
+            <h2>Active</h2>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Apple</td>
+                    <td>active</td>
+                </tr>
+            </table>
+        </div>
+        <div id="completed" class="listParent" style="display:none">
+            <h2>Completed</h2>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Orange</td>
+                    <td>completed</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <!--  -->
+    <hr>
+    <footer>
+        &copy; <span id="dateHolder"></span>
+        <script></script> Al Augustin.
+    </footer>
+    <!--  -->
+
+    <script src="js/main.js"></script>
+
+
+
+    <!-- <header>
+        <h1>My Task List</h1>
+    </header>
+    <main>
+        <input type="text" id="myInput" placeholder="Note...">
+        <input type="text" id="myInput" placeholder="Status...">
+        <span onclick="newElement()" class="addBtn">Submit</span>
+        <!--  -->
+    <!-- Tab links --
+        <div class="tab">
+            <button class="tablinks" onclick="scoTodo.tabs(event, 'London')">London</button>
+            <button class="tablinks" onclick="scoTodo.tabs(event, 'Paris')">Paris</button>
+            <button class="tablinks" onclick="scoTodo.tabs(event, 'Tokyo')">Tokyo</button>
+        </div>
+
+        <div id="London" class="tabcontent">
+            <h3>London</h3>
+            <p>London is the capital city of England.</p>
+        </div>
+
+        <div id="Paris" class="tabcontent">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p>
+        </div>
+
+        <div id="Tokyo" class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+    </main>
+    <footer>
+        &copy; <script>new Date().getFullYear() > 2010 && document.write(new Date().getFullYear());</script> Al Augustin.
+    </footer>
+
+    <script src="js/main.js"></script> -->
+</body>
+
+</html>
